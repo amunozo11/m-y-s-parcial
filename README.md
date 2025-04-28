@@ -1,151 +1,163 @@
+# 🤖 Simulador de Robot Diferencial
 
-🐍 Proyecto de Simulación de Robot Diferencial
-Simulación gráfica en 2D/3D de un robot diferencial con visualización de datos y control dinámico.
+<div align="center">
 
-📦 Requisitos Generales
-Python: 3.11.6
+![Robot Simulation](https://img.shields.io/badge/Simulation-Robot-blue)
+![Python](https://img.shields.io/badge/Python-3.11.6-yellow)
+![OpenGL](https://img.shields.io/badge/OpenGL-3D-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
-Entorno virtual recomendado: .venv
+</div>
 
-bash
-Copiar
-Editar
+<p align="center">
+Simulación gráfica interactiva en 3D de un robot diferencial con control manual y automático, visualización de datos, trayectoria e interacción en tiempo real.
+</p>
+
+<div align="center">
+
+[📋 Requisitos](#-requisitos) • 
+[⚙️ Instalación](#️-instalación) • 
+[📁 Archivos](#-archivos-principales) • 
+[🎮 Controles](#-controles-de-simulación) • 
+[✨ Características](#-características-principales) • 
+[🚀 Inicio Rápido](#-inicio-rápido)
+
+</div>
+
+---
+
+## 📋 Requisitos
+
+- **Python:** 3.11.6 o superior
+- **Sistema Operativo:** Windows, Linux, macOS
+- **Entorno virtual recomendado:** `.venv`
+- **Librerías:**
+  - matplotlib
+  - pygame
+  - numpy
+  - PyOpenGL
+  - tkinter (incluido en Python oficial para Windows)
+
+## ⚙️ Instalación
+
+\`\`\`bash
+# Crear entorno virtual
 python -m venv .venv
+
+# Activar entorno virtual (Windows)
 .venv\Scripts\activate
+
+# Activar entorno virtual (Linux/macOS)
+source .venv/bin/activate
+
+# Instalar dependencias
 pip install matplotlib pygame numpy PyOpenGL
-📁 Archivos Principales
-1. simulacion voltaje.py
-🔵 Objetivo:
-Simular y graficar el comportamiento del voltaje de los motores a lo largo del tiempo.
+\`\`\`
 
-🔵 Importaciones usadas:
+## 📁 Archivos Principales
 
-python
-Copiar
-Editar
-import matplotlib.pyplot as plt
-import time
-🔵 Características:
+### 1. `robot_simulador.py`
 
-Crea una gráfica dinámica que muestra la evolución de los voltajes.
+<div align="center">
+<img src="https://img.shields.io/badge/3D-Simulation-blue" alt="3D Simulation">
+</div>
 
-Permite observar cambios de estado en el robot respecto al tiempo.
+**Objetivo:** Simulación 3D interactiva de un robot diferencial usando Pygame y OpenGL.
 
-Ideal para análisis de señales y comportamiento dinámico.
+**Características:**
+- Entorno 3D interactivo con cuadrícula pulsante
+- Seguimiento de trayectoria y orientación del robot
+- Panel HUD con información de estado en pantalla
+- Control manual mediante teclado y control automático hacia objetivos o rutas
+- Modos de cámara: Fija, Seguimiento, Vista Superior
 
-🔵 Ejecución:
-
-bash
-Copiar
-Editar
-python simulacion voltaje.py
-2. robot_simulador.py
-🚗 Objetivo:
-Simulación 3D interactiva de un robot diferencial usando Pygame y OpenGL.
-
-🚗 Importaciones usadas:
-
-python
-Copiar
-Editar
-import pygame
-import sys
-import math
-import numpy as np
-from pygame.locals import *
-from OpenGL.GL import *
-from OpenGL.GLU import *
-import tkinter as tk
-from tkinter import simpledialog
-🚗 Características principales:
-
-Entorno 3D interactivo con cuadrícula pulsante.
-
-Seguimiento de trayectoria del robot.
-
-HUD informativo en pantalla (posición, velocidad, voltajes, modo de control).
-
-Sistema de mensajes de estado y ayudas visuales.
-
-Control manual y automático (posiciones y rutas programadas).
-
-Cámara con modos dinámicos: fija, seguimiento o vista superior.
-
-🚗 Ejecución:
-
-bash
-Copiar
-Editar
+**Ejecución:**
+\`\`\`bash
 python robot_simulador.py
-🎮 Controles
+\`\`\`
 
-Tecla	Acción
-W / S	Aumentar / Disminuir voltaje de ambos motores
-A / D	Girar izquierda / derecha
-Q / E	Rotar la cámara
-R	Reiniciar la posición del robot
-C	Cambiar modo de cámara (FIXED / FOLLOW / TOP)
-P	Establecer posición objetivo (X, Y, Theta)
-L	Programar una ruta con múltiples puntos
-G	Mostrar / ocultar coordenadas de la cuadrícula
-T	Mostrar / ocultar el panel de posición
-H	Mostrar / ocultar ayuda en pantalla
-I	Mostrar / ocultar información del robot
-Clic izquierdo	Seleccionar un punto como objetivo
-ESC	Salir de la simulación
-✨ Visuales y mejoras
-Cuadrícula pulsante en 3D.
+### 2. `simulacion_voltaje.py`
 
-Flecha indicadora de orientación del robot.
+<div align="center">
+<img src="https://img.shields.io/badge/Data-Visualization-orange" alt="Data Visualization">
+</div>
 
-Renderizado correcto de textos en HUD (sin problemas de OpenGL).
+**Objetivo:** Simular y graficar el comportamiento del voltaje de los motores a lo largo del tiempo.
 
-Multiplicador de velocidad general para ajustar la dinámica del robot.
+**Características:**
+- Generación dinámica de gráficos de voltaje
+- Observación de cambios de estado en tiempo real
+- Análisis de señales de comportamiento dinámico
 
-Mensajes de estado flotantes con transparencia.
+**Ejecución:**
+\`\`\`bash
+python simulacion_voltaje.py
+\`\`\`
 
-Modo automático para seguir posiciones y rutas.
+## 🎮 Controles de Simulación
 
-🛠 Librerías necesarias
-matplotlib
+| Tecla | Acción |
+|-------|--------|
+| **W / S** | Aumentar / Disminuir voltaje de ambos motores |
+| **A / D** | Girar izquierda / derecha |
+| **Q / E** | Rotar la cámara |
+| **R** | Reiniciar la posición del robot |
+| **C** | Cambiar modo de cámara (FIXED / FOLLOW / TOP) |
+| **P** | Establecer posición objetivo (X, Y, Theta) |
+| **L** | Programar ruta de múltiples puntos |
+| **G** | Mostrar / Ocultar coordenadas de la cuadrícula |
+| **T** | Mostrar / Ocultar el panel de posición |
+| **H** | Mostrar / Ocultar ayuda |
+| **I** | Mostrar / Ocultar información del robot |
+| **Clic izquierdo** | Establecer un objetivo en la posición seleccionada |
+| **ESC** | Salir de la simulación |
 
-pygame
+## ✨ Características Principales
 
-numpy
+### Visualización y Simulación
+- ✅ Entorno 3D interactivo con cuadrícula pulsante animada
+- ✅ Robot diferencial con orientación y traza de movimiento
+- ✅ Panel HUD de información dinámico
+- ✅ Mensajes de estado flotantes (con efecto fade out)
+- ✅ Múltiples modos de cámara interactivos
 
-PyOpenGL
+### Control y Navegación
+- ✅ Control manual mediante teclado (W, A, S, D)
+- ✅ Control automático hacia posiciones objetivo
+- ✅ Programación de rutas con múltiples puntos
+- ✅ Navegación por clic en el entorno 3D
 
-(tkinter viene incluido con Python oficial en Windows.)
+### Análisis de Datos
+- ✅ Simulación de voltaje dinámica y gráfica
+- ✅ Visualización de trayectoria con colores dinámicos
+- ✅ Información en tiempo real de posición, orientación y velocidades
 
-Instalarlas todas en tu entorno virtual con:
+## 📊 Previsualización Esperada
 
-bash
-Copiar
-Editar
-pip install matplotlib pygame numpy PyOpenGL
-📷 Previsualización (visual esperada)
-✅ Cuadrícula dinámica
-✅ Robot diferencial animado
-✅ Traza histórica de posiciones
-✅ Panel HUD informativo
-✅ Mensajes flotantes
-✅ Gráficas de voltaje dinámico
+- Simulación visual 3D con cuadrícula animada y ejes resaltados
+- Robot diferencial animado, rotando y moviéndose de forma realista
+- Panel de datos dinámico informativo (HUD)
+- Mensajes flotantes de eventos
+- Gráfica de voltaje dinámico y evolución temporal
 
-🚀 Cómo comenzar
-bash
-Copiar
-Editar
+## 🚀 Inicio Rápido
+
+\`\`\`bash
+# Clonar el repositorio (si aplica)
+git clone https://github.com/tu-usuario/robot-diferencial-sim.git
+cd robot-diferencial-sim
+
 # Crear y activar entorno virtual
 python -m venv .venv
-.venv\Scripts\activate
+.venv\Scripts\activate  # Windows
+source .venv/bin/activate  # Linux/macOS
 
 # Instalar dependencias
 pip install matplotlib pygame numpy PyOpenGL
 
-# Ejecutar simulador 3D
+# Ejecutar el simulador
 python robot_simulador.py
 
 # O ejecutar la simulación de voltaje
-python simulacion voltaje.py
-🤝 Autores
-Proyecto desarrollado para prácticas de Modelado y Simulación.
+python simulacion_voltaje.py
+\`\`\`
